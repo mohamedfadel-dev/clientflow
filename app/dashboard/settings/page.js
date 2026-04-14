@@ -14,6 +14,18 @@ export default function SettingsPage() {
       description="A settings surface that rounds out the product and makes the dashboard feel complete."
       actions={<button className="button">Save changes</button>}
     >
+      <section className="panel environment-panel">
+        <div className="panel-head">
+          <div>
+            <p className="mini-label">Runtime</p>
+            <h2>Environment mode</h2>
+          </div>
+        </div>
+        <p className="muted">
+          ClientFlow is currently running in <strong>{workspace.onboardingComplete ? "active" : "setup"}</strong>{" "}
+          workspace state. The app itself is structured to support demo mode now and Supabase mode next.
+        </p>
+      </section>
       <section className="settings-grid">
         {settingsGroups.map((group) => (
           <article className="panel settings-panel" key={group.title}>

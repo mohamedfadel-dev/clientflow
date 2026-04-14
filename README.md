@@ -57,6 +57,7 @@ This first version includes:
 - App Router
 - custom CSS
 - client-side state with localStorage persistence
+- Supabase-ready configuration layer
 
 ## Why This Project Exists
 
@@ -80,8 +81,16 @@ npm install
 npm run dev
 ```
 
+By default the app runs in `demo` mode.
+
+Copy `.env.example` to `.env.local` when you want to configure runtime variables.
+
 ## Build
 
 ```bash
 npm run build
 ```
+
+## Deployment Notes
+
+See [docs/deployment.md](/home/fadali/clientflow/docs/deployment.md) for the current deployment and backend-integration path.

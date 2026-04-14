@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { appConfig, isDemoMode, isSupabaseMode } from "../lib/app-config";
 import { cloneInitialData } from "../lib/demo-data";
 
 const STORAGE_KEY = "clientflow-app-state";
@@ -56,6 +57,9 @@ export function AppProvider({ children }) {
   const api = useMemo(
     () => ({
       ...state,
+      mode: appConfig.mode,
+      isDemoMode,
+      isSupabaseMode,
       signIn({ email }) {
         const guessedName = email.split("@")[0].replace(/[._-]/g, " ");
         setState((current) => ({
